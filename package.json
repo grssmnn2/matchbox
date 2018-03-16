@@ -1,0 +1,23 @@
+{
+  "name": "matchbox",
+  "version": "1.0.0",
+  "description": "### Aggregated Subscription Box Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbrown511/matchbox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbrown511/matchbox/issues"
+  },
+  "homepage": "https://github.com/rbrown511/matchbox#readme",
+  "dependencies": {
+    "sequelize": "^4.37.0"
+  }
+}
