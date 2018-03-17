@@ -19,38 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
 
-    // box_id: {
-    //     type: Sequelize.INTEGER,
-    //     references: {
-    //         model: Box, 
-    //         key: 'id',
-
-    //         //  the tricky part -mysql when to check for foreqign key constraint 
-    //         //  since this line is only valid for postGres SQL 
-    //         deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-            
-    //     },
-
-    //     order_id: {
-    //         type: Sequelize.INTEGER,
-    //         references: {
-    //             model: Order,
-    //             key: 'id',
-    //             deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-                
-    //         },
-
-    //         favorites_id: {
-    //             type: Sequelize.INTEGER,
-    //             references: {
-    //                 model: Favorite,
-    //                 key: 'id',
-    //                 deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-    //             }
-    //         }
-            
-    //     }
-    // }
+    
   })
 
   User.associate = function(models) {
