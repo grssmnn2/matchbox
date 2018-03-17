@@ -1,0 +1,40 @@
+body {
+    padding-top: 54px;
+    background-image: url("../img/background.png");
+    border-right: 28px solid #e5d8d0;
+    border-left: 28px solid #e5d8d0;
+    color: #565656;
+}
+.logo {
+    font-family: "Love Ya Like A Sister";
+}
+.btn-info {
+    background-color: rgb(86, 223, 202);
+    color: white;
+}
+.bg-dark {
+    background-color: #fb0c28!important;
+}
+.red-accent {
+    color: #fb0c28;
+}
+#highlight-row {
+    background-color: #f5f5f5;
+    color: #565656;
+}
+.py-5 {
+    background-color: #f5f5f5;
+    border-top: 1px solid #fb0c28;
+    margin-top: 100px;
+}
+a .social-icon {
+    height: 40px;
+    margin: 0px auto;
+    display: block;
+}
+  
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
