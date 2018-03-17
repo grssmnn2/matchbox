@@ -1,10 +1,17 @@
 //  dependencies ? 
+
+// var user = require("./user");
+// var userBox = require("./user_boxes");
+
+// console.log(user);
 module.exports = function(sequelize, DataTypes) {
+    console.log('we hit regular box!!!');
     var Box = sequelize.define("Box", {
-        id: {
+        BoxId: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            
+            // autoIncrement: true,
+            // primaryKey: true
+
         },
         name: {
             type: DataTypes.STRING,
@@ -14,16 +21,30 @@ module.exports = function(sequelize, DataTypes) {
         description: {
             type: DataTypes.TEXT,
             allowNull: false
+        },
+
+        price: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }, 
+
+        bucket_id: {
+            type: DataTypes.INTEGER,
+            allowBull: false
         }
+
+
     })
 
     Box.associate = function(models) {
-        Box.belongsTo(models.User, {
-            foriegnKey: {
-                allowNull: false
-            }
+        console.log('THESE ARE OUR models.User in box -------', models.User);
+        Box.belongsToMany(models.User, {
+            through: models.UserBox,
+            onDelete: "CASCADE"
         });
     };
+
+    console.log('THESE ARE OUR Box  right before return --- -------', Box);
 
     return Box;
 }
