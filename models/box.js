@@ -17,5 +17,13 @@ module.exports = function(sequelize, DataTypes) {
         }
     })
 
+    Box.associate = function(models) {
+        Box.belongsTo(models.User, {
+            foriegnKey: {
+                allowNull: false
+            }
+        });
+    };
+
     return Box;
 }
