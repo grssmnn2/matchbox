@@ -1,4 +1,4 @@
-// in models folder there should eventually be a table set up for "User"
+// require access to User table in models folder
 var db = require("../models");
 
 module.exports = function (app) {
@@ -14,9 +14,14 @@ module.exports = function (app) {
     app.post("/api/users", function (req, res) {
         console.log(req.body);
         db.User.create({
-            name: req.body.name,
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
             email: req.body.email,
-            age: req.body.age
+            age: req.body.age,
+            city: req.body.city,
+            password: req.body.password,
+            bucket_id: req.body.bucket_id
+
         })
             .then(function (dbUser) {
                 res.json(dbUser);
@@ -37,4 +42,3 @@ module.exports = function (app) {
     });
 };
 
-// upon submission of survey, match user with best box match based on similar scoring
