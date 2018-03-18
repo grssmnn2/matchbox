@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MatchBox</title>
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Itim|Titan+One" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/boxicon.png" type="image/x-icon">
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style-template.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
@@ -16,43 +16,103 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+          <a class="navbar-brand" href="#">match<strong>Box</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home
+              <a class="nav-link" href="#">Dashboard
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="#">Sign Out</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    {{{ body }}}
+    <!-- Page Content -->
+    <div class="container single-page">
+
+      <!-- Heading Row -->
+      <div class="row my-4">
+        <div class="col-lg-8">
+          <img class="img-fluid rounded" src="https://urbantastebuds-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/e5a7bdc3204d11768f6954b99e0587b7.jpg" alt="">
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+          <h1>Welcome Back, {{{ body }}}</h1>
+          <p class="dash-blurb">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, temporibus nam eius molestiae ex sit nulla, alias assumenda, adipisci mollitia fugiat distinctio dolore sint officia? Pariatur quas consequuntur blanditiis quam?</p>
+          <a class="btn purchase-btn btn-lg" href="#">Refer A Friend!</a>
+        </div>
+        <!-- /.col-md-4 -->
+      </div>
+      <!-- /.row -->
+
+      <!-- Call to Action Well -->
+      <div class="card text-white bg-secondary my-4 text-center">
+        <div class="card-body" id="highlight-row">
+        </div>
+      </div>
+
+      <!-- Content Row -->
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body" id="result-1">
+              <h2 class="card-title">Box One</h2>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn purchase-btn btn-order">More Info</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body" id="result-2">
+              <h2 class="card-title">Box Two</h2>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn purchase-btn btn-order">More Info</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body" id="result-3">
+              <h2 class="card-title">Box Three</h2>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+            </div>
+            <div class="card-footer">
+              <a href="#" class="btn purchase-btn btn-order">More Info</a>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-md-4 -->
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
+    <footer class="py-5">
       <div class="container">
-        <a href="https://github.com/rbrown511/matchbox"><img src="assets/img/github.png" /></a>
+        <a href="https://github.com/rbrown511/matchbox"><img class="social-icon" src="assets/img/github.png" /></a>
       </div>
-      <!-- /.container -->
     </footer>
 
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendors/jquery/jquery.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>
