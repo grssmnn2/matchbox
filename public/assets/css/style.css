@@ -1,30 +1,63 @@
 body {
     padding-top: 54px;
     background-image: url("../img/background.png");
-    border-right: 28px solid #e5d8d0;
-    border-left: 28px solid #e5d8d0;
     color: #565656;
 }
-.logo {
-    font-family: "Love Ya Like A Sister";
+.navbar {
+    background-color: #7DB9E8!important;
+    color: #FFFFFF;
+    margin-bottom: 50px;
 }
-.btn-info {
-    background-color: rgb(86, 223, 202);
-    color: white;
+.single-page {
+    padding-top: 90px;
 }
-.bg-dark {
-    background-color: #fb0c28!important;
+.dash-blurb {
+    margin: 15px auto;
 }
-.red-accent {
-    color: #fb0c28;
+.rounded, .rounded-circle {
+    margin-bottom: 15px;
+}
+.accent {
+    color: #7DB9E8;
+}
+.accent2 {
+    color: #FC5A1A;
+    font-weight: 700;
 }
 #highlight-row {
     background-color: #f5f5f5;
     color: #565656;
 }
+.divide {
+    padding-bottom: 20px;
+    margin: 15px auto;
+}
+form {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.survey-question {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    margin-left: 15px;
+}
+.survey-options {
+    margin-left: 60px;
+}
+.custom-control-label {
+    margin-left: 15px;
+}
+.custom-control-label::before {
+    max-height: 0px;
+}
+#submit-survey {
+    float: right;
+    margin-right: 75px;
+}
 .py-5 {
     background-color: #f5f5f5;
-    border-top: 1px solid #fb0c28;
+    border-top: 1px solid #7DB9E8;
     margin-top: 100px;
 }
 a .social-icon {
@@ -32,15 +65,6 @@ a .social-icon {
     margin: 0px auto;
     display: block;
 }
-  
-@media (min-width: 992px) {
-    body {
-        padding-top: 56px;
-    }
-}
-
-
-
 hr { 
     display: block;
     margin-top: 0.5em;
@@ -49,38 +73,21 @@ hr {
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
-} 
-
-form{
-    padding-left: 200px;
-    padding-right: 200px;
-    
 }
-
-.results {
-    font: 500 14px/26px "Poppins", sans-serif;
-    color: #fff;
-    background: #fc5a1a;
-    padding: 12px 30px;
-    border-radius: 40px;
-    display: inline-block;
-    -webkit-transition: all 0.4s linear;
-    -o-transition: all 0.4s linear;
-    transition: all 0.4s linear;
-    font-family: "Poppins", sans-serif;
-
+@media (max-width: 767px) {
+    form {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .survey-options {
+        margin-left: 0px;
+    }
+    .custom-control-label {
+        margin-left: 0px;
+    }
 }
-.results:hover {
-    color: #fff;
-    background: #e64100;
-    -webkit-box-shadow: 0px 6px 11.83px 1.17px rgba(0, 0, 0, 0.08);
-    box-shadow: 0px 6px 11.83px 1.17px rgba(0, 0, 0, 0.08);
-  }
-
-  .col-btn{
-      align-items: center
-  }
-
-  .col-md-12{
-    position:static
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
 }
