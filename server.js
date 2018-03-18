@@ -1,29 +1,26 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path")
-var boxApiRoutes = require("./routes/box-api-routes");
-var htmlRoutes = require("./routes/html-routes");
-var userApiRoutes = require("./routes/user-api-routes");
+(() => {
+  const bodyParser = require("body-parser");
+  const express = require("express");
+  const app = express();
+  const exphbs = require("express-handlebars");
+  const db = require("./models");
+  const PORT = process.env.PORT || 3000;
 
-var app = express();
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static(path.join(__dirname, "public")));
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
-var exphbs = require("express-handlebars");
+  app.use(express.static(__dirname + "/public"));
 
-app.engine("handlebars", exphbs({
-  defaultLayout: "main"
-}));
-app.set("view engine", "handlebars");
+  app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+  app.set("view engine", "handlebars");
 
-boxApiRoutes(app);
-htmlRoutes(app);
-userApiRoutes(app);
+  require("./routes/html.js")(app);
+  require("./routes/api-box.js")(app);
+  require("./routes/api-user.js")(app);
+  require("./routes/api-order.js")(app);
+  require("./routes/api-favorites.js")(app);
 
-// listen on port 3000
-var port = process.env.PORT || 3000;
-app.listen(port);
+  db.sequelize.sync({ force: false }).then(() => {
+      app.listen(PORT, () => console.log("App listening on PORT " + PORT));
+  });
+})();
