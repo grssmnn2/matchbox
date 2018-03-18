@@ -2,7 +2,7 @@
 -- 1 = Family Friendly
 -- 2 = Pet Lovers
 -- 3 = Active Lifestyle
--- 4 = Health & Wellness
+-- 4 = Personal Grooming
 -- 5 = Food & Drink
 
 -- Family Friendly (1)
@@ -41,7 +41,7 @@
 { name: "Courtside Crate", bucket_id: 3, price: 29.99, image_url: "https://cdn.hellosubscription.com/wp-content/uploads/sites/2/2017/03/477x376_v1.png", description: "For the ultimate fan: the official subscription crate of the NBA delivered to your door. Each box comes with 5-7 team-specific items every other month that you can’t get anywhere else. Gear, collectibles and a whole lot more."}
 { name: "Football Haul", bucket_id: 3, price: 29.99 , image_url: "https://cdn.hellosubscription.com/wp-content/uploads/sites/2/2016/01/ab6663f5a5da4336980e37d2dc0e1438.jpeg", description: "Every box is a surprise. These may include NFL action-figures, NFL bobble heads, NFL trading cards, games, puzzles, magnets and apparel. This will often include limited edition exclusive collectibles and apparel. Items will be from superstars and teams across the league!"}
 
--- Health & Beauty (4)
+-- Personal Grooming (4)
 { name: "BirchBox", bucket_id: 4, price: 10.00, image_url: "https://urbantastebuds-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/1916675_10153568674801647_6504690909404393361_n.jpg", description: "When you join Birchbox, you’ll receive 5 beauty samples, all of which have been picked to match your beauty profile. Plus, whenever you review the products that you receive in your box, you’ll receive points that can go towards redeeming for full-sized products in the Birchbox shop."}
 { name: "Play! by Sephora", bucket_id: 4, price: 10.00, image_url: "https://urbantastebuds-wpengine.netdna-ssl.com/wp-content/uploads/2016/08/img_0635-2-1024x768.jpg", description: "With Play! by Sephora, you’ll receive a box of 5 deluxe skin care, hair care, and makeup samples, as well as a fragrance bonus, all of which have been handpicked form Sephora’s shelves. To get started, all you need to do is fill out a beauty profile and you’ll then get a personally curated box every month."}
 { name: "LOLA", bucket_id: 4, price: 10.00, image_url: "https://urbantastebuds-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/lola-tampon-subscriptionbox.jpg", description: "LOLA is unique in the fact that it’ll deliver 100% organic tampons and feminine products to your door every month. All you need to do is just choose your product type and frequency. It’s that easy."}
