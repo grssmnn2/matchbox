@@ -21,9 +21,14 @@
     });
 
     // user dashboard (handlebars)
-    app.get("/:id", (req, res) => {
-      db.UserBox.findOne({ where: { id: req.params.id }
-      }).then(data => res.render("index", { user: data }));
+    // app.get("/:id", (req, res) => {
+    //   db.UserBox.findOne({ where: { id: req.params.id }
+    //   }).then(data => res.render("index", { user: data }));
+    // });
+
+    // TEMPLATE DASHBOARD - TESTING ONLY
+    app.get("/dashboard", (req, res) => {
+      res.sendFile(path.join(__dirname, "../public/test-userProfiles.html"));
     });
 
   };
