@@ -6,10 +6,9 @@ body {
 .navbar {
     background-color: #7DB9E8!important;
     color: #FFFFFF;
-    margin-bottom: 50px;
 }
 .single-page {
-    padding-top: 90px;
+    padding-top: 50px;
 }
 .dash-blurb {
     margin: 15px auto;
