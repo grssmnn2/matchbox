@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "",
-    "password": "",
-    "database": "matchbox_db",
-    "host": "",
+    "username": "nltyyj013np45o04",
+    "password": "a2b8siwqu33nwkn2",
+    "database": "k0r2ij19tbvrfd44",
+    "host": "otmaa16c1i9nwrek.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
