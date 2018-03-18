@@ -22,7 +22,7 @@
     let math = cutOff_date - date_only;
 
     if (math > 0) {
-        $("#hightlight-row").html(`<h4 class="highlight">There are ${math} Days until Your ${moment().month(currentMonth).format("MMMM")} Box Ships!<h4>`);
+        $("#hightlight-row").html(`<h4 class="highlight">There are <span class="accent">${math}</span> Days until Your ${moment().month(currentMonth).format("MMMM")} Box Ships!<h4>`);
     } else {
         $("#hightlight-row").html(`<h4 class="highlight">Your ${moment().month(currentMonth).format("MMMM")} Box has Shipped!<h4>`);
     }
