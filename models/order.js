@@ -1,13 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var Order = sequelize.define("Order", {
-    id: {
-      type:  DataTypes.INTEGER, autoIncrement: true,
-      primaryKey: true
-      
-    
-  },
+
     name: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
 
     price: {
@@ -24,5 +20,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     })
   }
+  console.log("THIS IS OUR ORDER!!!! right before the return ------", Order);
   return Order
 }
