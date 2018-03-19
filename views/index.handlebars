@@ -9,7 +9,7 @@
         <h1>Welcome Back, {{userProfile.firstName}}!</h1>
         <p class="dash-blurb">Here's your profile at a glance:
             <br>NAME: {{userProfile.firstName}} {{userProfile.lastName}}
-            <br>AGE: {{formatDate userProfile.age day="numeric" month="long" year="numeric"}}
+            <br>DOB: {{userProfile.age}}
             <br>LOCATION: {{userProfile.city}}
             <br>MEMBER SINCE: {{userProfile.createdAt}}
             <br>Your Boxes: {{ pastOrders.BoxId }}
