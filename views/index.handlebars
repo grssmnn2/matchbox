@@ -6,12 +6,12 @@
         <img class="img-fluid rounded" src="https://urbantastebuds-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/e5a7bdc3204d11768f6954b99e0587b7.jpg" alt="">
     </div>
     <div class="col-lg-4">
-        <h1>Welcome Back, {{userProfile.firstName}}</h1>
+        <h1>Welcome Back, {{userProfile.firstName}}!</h1>
         <p class="dash-blurb">Here's your profile at a glance:
             <br>NAME: {{userProfile.firstName}} {{userProfile.lastName}}
-            <br>AGE: {{userProfile.age}}
+            <br>AGE: {{formatDate userProfile.age day="numeric" month="long" year="numeric"}}
             <br>LOCATION: {{userProfile.city}}
-            <br>MEMBER SINCE: {{formatDate userProfile.createdAt day="numeric" month="long" year="numeric"}}
+            <br>MEMBER SINCE: {{userProfile.createdAt}}
             <br>Your Boxes: {{ pastOrders.BoxId }}
         </p>
         <a class="btn purchase-btn btn-lg" href="#">Refer A Friend!</a>
