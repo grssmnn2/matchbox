@@ -67,3 +67,35 @@ INSERT INTO Boxes (name, bucket_id, price, image_url, description) VALUES
 ("TurnTable Kitchen", 5, 25.00, "http://cdn-img.instyle.com/sites/default/files/styles/684xflex/public/1449527193/120715-foodie-box-9.jpg?itok=S500kf2p", "Turntable Kitchen wants to help with your next dinner party! Its Pairings Box delivers a curated food and music experience to your door by sending you a perfectly coordinated soundtrack and menu."),
 ("Uncorked Box", 5, 30.00, "https://d3lri94xwt3wfr.cloudfront.net/0990422fc8a444be9d881b4a4147b22f_600_85_70.jpeg", "Each month you will receive a fun themed box filled with 5-7 wine related items. Makes a great gift for wine lovers, champagne lovers, or anyone else who loves to get presents every month!"),
 ("Saloon Box", 5, 37.00, "https://thumbor.forbes.com/thumbor/960x0/smart/https%3A%2F%2Fblogs-images.forbes.com%2Fsboyd%2Ffiles%2F2017%2F11%2Fsaloon-box.jpg", "Expand your cocktail repertoire with Saloon Box! Each month, this boozy subscription box will deliver precisely-measured ingredients, top shelf liquors in sample sizes, and recipe cards for inventive cocktails, each one created by a different mixologist. In no time, you'll become an at-home bartending pro, and you'll have so much fun learning new tricks and recipes.");
+
+
+
+
+
+
+-------------------
+-------------------
+---- TESTING ------
+-------------------
+DROP TABLE Boxes;
+CREATE TABLE IF NOT EXISTS `Boxes` (
+    `id` INTEGER NOT NULL auto_increment , 
+    `name` VARCHAR(255) NOT NULL,
+    `bucket_id` INTEGER,
+    `price` DEC NOT NULL, 
+    `image_url` TEXT NOT NULL,
+    `description` TEXT NOT NULL,
+    `createdAt` DATETIME NOT NULL,
+    `updatedAt` DATETIME NOT NULL, 
+    PRIMARY KEY (`id`)
+);
+
+ALTER TABLE `Boxes`
+ADD `image_url` TEXT NOT NULL;
+
+INSERT INTO `Users` (email, password, bucket_id, firstName, lastName, age, city) VALUES 
+("", "", 1, "Priya", "Shah", 0, "Chicago, IL"),
+("", "", 2, "Noreen", "Madden", 0, "Chicago, IL"),
+("", "", 3, "Shawn", "Feiz", 0, "Chicago, IL"),
+("", "", 4, "Cecily", "Grossmann", 0, "Chicago, IL"),
+("", "", 5, "Rachel", "Brown", 0, "Chicago, IL");

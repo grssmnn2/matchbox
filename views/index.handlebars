@@ -1,1 +1,42 @@
-user_name
+<div class="container single-page">
+
+    <!-- Heading Row -->
+    <div class="row my-4">
+    <div class="col-lg-8">
+        <img class="img-fluid rounded" src="https://urbantastebuds-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/e5a7bdc3204d11768f6954b99e0587b7.jpg" alt="">
+    </div>
+    <div class="col-lg-4">
+        <h1>Welcome Back, {{userProfile.firstName}}</h1>
+        <p class="dash-blurb">Here's your profile at a glance:
+            <br>NAME: {{userProfile.firstName}} {{userProfile.lastName}}
+            <br>AGE: {{userProfile.age}}
+            <br>LOCATION: {{userProfile.city}}
+            <br>MEMBER SINCE: {{formatDate userProfile.createdAt day="numeric" month="long" year="numeric"}}
+            <br>Your Boxes: {{ pastOrders.BoxId }}
+        </p>
+        <a class="btn purchase-btn btn-lg" href="#">Refer A Friend!</a>
+    </div>
+    </div>
+
+    <!-- Days to Ship Cutoff -->
+    <div class="card text-white bg-secondary my-4 text-center">
+        <div class="card-body" id="highlight-row"></div>
+    </div>
+
+    <!-- Subscription Box Options -->
+    {{#boxResults}}
+    <div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+        <div class="card-body" id="result-{{id}}">
+            <h2 class="card-title">{{name}}</h2>
+            <p class="card-text">{{description}}</p>
+        </div>
+        <div class="card-footer">
+            <a href="#" class="btn purchase-btn btn-order">More Info</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    {{/boxResults}}
+</div>
