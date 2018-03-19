@@ -16,8 +16,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     password: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
     },
 
     bucket_id: {
@@ -52,12 +51,6 @@ module.exports = function(sequelize, DataTypes) {
   User.assocciate = function(models) {
     User.hasMany(models.Order, {
       onDelete: "cascase"
-    })
-  }
-
-  User.assocciate.associate = function(models) {
-    User.hasMany(models.Favorite, {
-      onDelete: "cascade"
     })
   }
 
