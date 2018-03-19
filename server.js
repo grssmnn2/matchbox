@@ -9,10 +9,10 @@
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
 
-  app.use(express.static(__dirname + "/public"));
-
   app.engine("handlebars", exphbs({ defaultLayout: "main" }));
   app.set("view engine", "handlebars");
+
+  app.use(express.static(__dirname + "/public"));
 
   require("./routes/html.js")(app);
   require("./routes/api-box.js")(app);
