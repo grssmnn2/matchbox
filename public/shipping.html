@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MatchBox</title>
+    <link rel="shortcut icon" href="assets/img/boxicon.png" type="image/x-icon">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link href="assets/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style-template.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">match
+                <strong>Box</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container single-page">
+
+        <!-- Heading Row -->
+        <div class="row md-12">
+            <div class="col-md-12 text-center">
+                <img class="rounded-circle" src="https://greenpinatatoys.com/blog/wp-content/uploads/2016/11/Subscription-e1480449014619.jpg"
+                    style="width:350px">
+            </div>
+        </div>
+        <div class="row md-12">
+            <div class="col-md-12 text-center">
+                <h1 class="accent2">Shipping and Billing</h1>
+                <h4 class="divide">Please Enter an Address to Receive Your Subscription</h4>
+            </div>
+        </div>
+
+        <form>
+            <hr>
+            <div class="row">
+                <div class="col-md-12" id="shipping">
+                    <h4>Shipping:</h4>
+                    <form action="/my-handling-form-page" method="post">
+                        <div>
+                            <label for="name">Address:</label>
+                            <input type="text" id="address" name="address" data-error="Please enter an address." required/>
+                        </div>
+                        <div>
+                            <label for="city">City:</label>
+                            <input type="text" id="city" name="city" data-error="Please enter a city." required/>
+                        </div>
+                        <div>
+                            <label for="state">State:</label>
+                            <input type="text" id="state" name="state" data-error="Please enter a state." required/>
+                        </div>
+                        <div>
+                            <label for="zip">Zip Code:</label>
+                            <input type="text" id="zip" name="zip" data-error="Please enter a zip code." required/>
+                        </div>
+                        <input type="checkbox" name="checkbox" id="checkbox" onclick="submitForm()">Billing address is the same as shipping.
+                        <br>
+                        <br>
+
+                </div>
+                <div class="col-md-12" id="billing">
+                    <h4>Billing:</h4>
+                    <form action="/my-handling-form-page" method="post">
+                        <div>
+                            <label for="name">Address:</label>
+                            <input type="text" id="billAddress" name="address" data-error="Please enter an address." required/>
+                        </div>
+                        <div>
+                            <label for="city">City:</label>
+                            <input type="text" id="billCity" name="city" data-error="Please enter a city." required/>
+                        </div>
+                        <div>
+                            <label for="state">State:</label>
+                            <input type="text" id="billState" name="state" data-error="Please enter a state." required/>
+                        </div>
+                        <div>
+                            <label for="zip">Zip Code:</label>
+                            <input type="text" id="billZip" name="zip" data-error="Please enter a zip code." required/>
+                        </div>
+                        <br>
+
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-12 col-btn">
+                    <a href="finish.html" type="button" class="btn btn-lg submit" style="text-decoration: none">Submit</a>
+                </div>
+            </div>
+            </form>
+
+
+
+
+
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <a href="https://github.com/rbrown511/matchbox">
+                <img class="social-icon" src="assets/img/github.png" />
+            </a>
+        </div>
+    </footer>
+
+    <script src="assets/vendors/jquery/jquery.min.js"></script>
+    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script>
+        function submitForm() {
+            if ($('input[name="checkbox"]').is(":checked")) {
+                $("#billing").hide();
+            } else {
+                $("#billing").show();
+            }
+
+        };
+
+
+    </script>
+
+</body>
+
+</html>
