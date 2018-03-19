@@ -25,7 +25,7 @@
       Promise.all([
         db.Box.findAll({ where: { bucket_id: req.params.bucket } }), 
         db.User.findOne({ where: { id: req.params.id }}), 
-        db.UserBox.findAll({ where: { id: req.params.id }})
+        db.UserBox.findAll({ where: { UserId: req.params.id }})
       ]).then(([boxResults, userProfile, pastOrders]) => {
         res.render("index", { boxResults, userProfile, pastOrders });
       })

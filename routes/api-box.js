@@ -15,15 +15,9 @@ module.exports = function (app) {
   });
 
   // Get route for returning boxes of a specific category
-  app.get("/api/boxes/category/:category", function (req, res) {
-    db.Box.findAll({
-      where: {
-        category: req.params.category
-      }
-    })
-      .then(function (dbBox) {
-        res.json(dbBox);
-      });
+  app.get("/api/boxes/:bucket_id", (req, res) => {
+    db.Box.findAll({ where: { bucket_id: req.params.bucket_id }
+    }).then(dbBox => res.json(dbBox));
   });
 
   // Get route for retrieving a single box
