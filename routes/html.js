@@ -20,7 +20,7 @@
       res.sendFile(path.join(__dirname, "../public/survey.html"));
     });
 
-     // survey page
+     // shipping page
      app.get("/shipping", (req, res) => {
       res.sendFile(path.join(__dirname, "../public/shipping.html"));
     });

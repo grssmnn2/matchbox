@@ -60,19 +60,19 @@
                     <form action="/my-handling-form-page" method="post">
                         <div>
                             <label for="name">Address:</label>
-                            <input type="text" class="address" name="address" />
+                            <input type="text" id="address" name="address" />
                         </div>
                         <div>
                             <label for="city">City:</label>
-                            <input type="text" class="city" name="city"/>
+                            <input type="text" id="city" name="city" />
                         </div>
                         <div>
                             <label for="state">State:</label>
-                            <input type="text" class="state" name="state" />
+                            <input type="text" id="state" name="state" />
                         </div>
                         <div>
                             <label for="zip">Zip Code:</label>
-                            <input type="text" class="zip" name="zip" />
+                            <input type="text" id="zip" name="zip" />
                         </div>
                         <input type="checkbox" name="checkbox" id="checkbox" onclick="submitForm()">Billing address is the same as shipping.
                         <br>
@@ -84,19 +84,19 @@
                     <form action="/my-handling-form-page" method="post">
                         <div>
                             <label for="name">Address:</label>
-                            <input type="text" class="address" name="address" />
+                            <input type="text" id="baddress" name="address" />
                         </div>
                         <div>
                             <label for="city">City:</label>
-                            <input type="text" class="city" name="city"/>
+                            <input type="text" id="bcity" name="city" />
                         </div>
                         <div>
                             <label for="state">State:</label>
-                            <input type="text" class="state" name="state" />
+                            <input type="text" id="bstate" name="state" />
                         </div>
                         <div>
                             <label for="zip">Zip Code:</label>
-                            <input type="text" class="zip" name="zip" />
+                            <input type="text" id="bzip" name="zip" />
                         </div>
                         <br>
 
@@ -110,11 +110,6 @@
                 </div>
             </div>
             </form>
-
-
-
-
-
 
     </div>
 
@@ -130,30 +125,9 @@
 
     <script src="assets/vendors/jquery/jquery.min.js"></script>
     <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="assets/js/ship.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $(".submit").click(function (event) {
-                if ($(".address").val() === "") {                   
-                    event.preventDefault();
-                    return false;
-                    // document.getElementsByClassName(".address").style.borderColor = "red";
-                }
-                if ($(".city").val() === "") {
-                    event.preventDefault();
-                    return false;
-                }
-                if ($(".state").val() === "") {
-                    event.preventDefault();
-                    return false;
-                }
-                if ($(".zip").val() === "") {
-                    event.preventDefault();
-                    return false;
-                }
-            })
-        })
         function submitForm() {
             if ($('input[name="checkbox"]').is(":checked")) {
                 $("#billing").hide();
@@ -162,7 +136,6 @@
             }
 
         };
-
 
     </script>
 
