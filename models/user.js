@@ -5,10 +5,8 @@
 var bcrypt = require("bcrypt-nodejs")
 //  creating user model and exporting
 module.exports = function(sequelize, DataTypes) {
-  console.log('we hit user!!!!!!!!!!!');
+  console.log("we hit user!!!!!!!!!!!")
   var User = sequelize.define("User", {
-    //  validation on user info
-    //  let's get email for now and we can add more later
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -22,20 +20,8 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
 
-    UserId: {
-      type: DataTypes.INTEGER,
-      // autoIncrement: true,
-      // primaryKey: true
-    },
-
-    // BoxId: {
-    //   type: DataTypes.INTEGER,
-    //   foreignKey: true
-    // },
-
     bucket_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.INTEGER
     },
 
     firstName: {
@@ -49,47 +35,38 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     age: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.INTEGER
     },
 
     city: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
     }
   })
 
-  // User.associate = function(models) {
-  //   User.hasMany(models.Box, {
-  //     onDelete: "cascade"
-  //   })
-  // }
+  User.associate = function(models) {
+    User.hasMany(models.Box, {
+      onDelete: "cascade"
+    })
+  }
 
-  // User.assocciate = function(models) {
-  //   User.hasMany(models.Order, {
-  //     onDelete: "cascase"
-  //   })
-  // }
+  User.assocciate = function(models) {
+    User.hasMany(models.Order, {
+      onDelete: "cascase"
+    })
+  }
 
-  // User.assocciate.associate = function(models) {
-  //   User.hasMany(models.Favorite, {
-  //     onDelete: "cascade"
-  //   })
-  // }
+  User.assocciate.associate = function(models) {
+    User.hasMany(models.Favorite, {
+      onDelete: "cascade"
+    })
+  }
 
   User.associate = function(models) {
-    console.log('THESE ARE OUR MODELS in user-------', models);
-    User.belongsToMany(
-      models.Box,
-      { through: models.UserBox,
+    console.log("THESE ARE OUR MODELS in user-------", models)
+    User.belongsToMany(models.Box, {
+      through: models.UserBox,
       onDelete: "CASCADE"
-      }
-      // {
-      //   foriegnKey: {
-      //     allowNull: false
-      //   }
-      // }
-    )
+    })
   }
   // //  ok so for each user -compare unhashed to hashed password
   // User.prototype.validPassword = function(password) {
@@ -100,6 +77,6 @@ module.exports = function(sequelize, DataTypes) {
   // User.hook("beforeCreate", function(user) {
   //   user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null)
   // })
-  console.log('THIS IS THE USER !!!! right before the return ------', User);
+  console.log("THIS IS THE USER !!!! right before the return ------", User)
   return User
 }

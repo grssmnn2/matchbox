@@ -7,20 +7,16 @@
 module.exports = function(sequelize, DataTypes) {
     console.log('we hit regular box!!!');
     var Box = sequelize.define("Box", {
-        BoxId: {
-            type: DataTypes.INTEGER,
-            // autoIncrement: true,
-            // primaryKey: true
-
-        },
+     
         name: {
             type: DataTypes.STRING,
             allowNull: false
 
         },
-        description: {
-            type: DataTypes.TEXT,
-            allowNull: false
+
+        bucket_id: {
+            type: DataTypes.INTEGER,
+            allowBull: false
         },
 
         price: {
@@ -28,12 +24,15 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         }, 
 
-        bucket_id: {
-            type: DataTypes.INTEGER,
-            allowBull: false
+        image_url: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false
         }
-
-
     })
 
     Box.associate = function(models) {
