@@ -20,8 +20,8 @@ module.exports = function (app) {
             age: req.body.age,
             city: req.body.city,
             password: req.body.password,
-            bucket_id: req.body.bucket_id
-
+            bucket_id: req.body.bucket_id,
+            image_url: req.body.image_url
         })
             .then(function (dbUser) {
                 res.json(dbUser);

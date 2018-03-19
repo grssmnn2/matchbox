@@ -1,0 +1,18 @@
+<div class="row my-4">
+    <div class="col-lg-7 center">
+        <img class="img-fluid rounded" src="https://urbantastebuds-wpengine.netdna-ssl.com/wp-content/uploads/2017/01/e5a7bdc3204d11768f6954b99e0587b7.jpg" alt="">
+    </div>
+    <div class="col-lg-5 bg-white account-snapshot">
+        <h1 class="text-center">It's Lit, {{userProfile.firstName}}</h1>
+        <h5 class="dash-blurb accent text-center">You are currenty subscribed for:<br>{{pastOrders.BoxId}}</h5>
+        <div class="dash-blurb">
+            <h5 class="accent2">Profile Snapshot</h5>
+            <h5><strong>Name: </strong>{{userProfile.firstName}} {{userProfile.lastName}}</h5>
+            <h5><strong>Email: </strong>{{userProfile.email}}</h5>
+            <h5><strong>Location: </strong>{{userProfile.city}}, {{userProfile.state}}IL</h5>
+            <h5><strong>Member Since: </strong>{{userProfile.createdAt}}</h5>
+        </div>
+        <a class="btn purchase-btn btn-lg float-right" href="#">Update Profile</a>
+        <div class="clearfix"></div>
+    </div>
+</div>
