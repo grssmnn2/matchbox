@@ -20,6 +20,11 @@
       res.sendFile(path.join(__dirname, "../public/survey.html"));
     });
 
+     // survey page
+     app.get("/shipping", (req, res) => {
+      res.sendFile(path.join(__dirname, "../public/shipping.html"));
+    });
+
     // user dashboard (handlebars)
     // app.get("/:id", (req, res) => {
     //   db.UserBox.findOne({ where: { id: req.params.id }
