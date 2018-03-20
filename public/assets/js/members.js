@@ -3,7 +3,7 @@ $(document).ready(function() {
     // and updates the HTML on the page
     // $.get("/api/user_data").then(function(data) {
     // //  this will be added in so that profile page updates dynamically 
-    // //   $(".member-name").text(data.email);
+    //   $("#member-name").text(data.email);
     // });
   });
   
