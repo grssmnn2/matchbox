@@ -106,24 +106,24 @@
                     <div id="billing">
                         <div class="form-group">
                             <label for="inputAddress">Billing Address</label>
-                            <input type="text" class="form-control bill" id="bAddress" placeholder="1234 Main St">
+                            <input type="text" class="form-control bill" id="bAddress" placeholder="1234 Main St" required>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress2">Address 2</label>
-                            <input type="text" class="form-control bill" id="bAddress2" placeholder="Apartment, studio, or floor">
+                            <input type="text" class="form-control bill" id="bAddress2" placeholder="Apartment, studio, or floor" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">City</label>
-                                <input type="text" class="form-control bill" id="bCity" placeholder="San Diego">
+                                <input type="text" class="form-control bill" id="bCity" placeholder="San Diego"required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputState">State</label>
-                                <input id="bState" class="form-control bill" placeholder="California">
+                                <input id="bState" class="form-control bill" placeholder="California"required>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="inputZip">Zip</label>
-                                <input type="text" class="form-control bill" id="bZip" placeholder="12345">
+                                <input type="text" class="form-control bill" id="bZip" placeholder="12345"required>
                             </div>
                         </div>
                         <hr>
@@ -148,13 +148,15 @@
 
     <script src="assets/js/ship.js"></script>
     <script>
-
+        // toggle billing address if checkbox checked
         function submitForm() {
             if ($('input[name="checkbox"]').is(":checked")) {
                 $("#billing").hide();
+                $('.bill').prop('required', false);
             } else {
                 $("#billing").show();
-                $('.bill').attr('required');
+               // require billing if unhidden
+                $('.bill').prop('required', true);
             }
 
         };
