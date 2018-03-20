@@ -13448,10 +13448,11 @@ iframe {
 
 .ft_copyright {
   text-align: center;
+  background-color: #f9faff;
 }
 
 .ft_copyright p {
-  color: #6b6d6f;
+  color: black;
   font-size: 16px;
   line-height: 26px;
   letter-spacing: .32px;
