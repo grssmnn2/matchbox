@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,97 +9,136 @@
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/img/boxicon.png" type="image/x-icon">
     <!-- Latest compiled and minified Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <!-- Latesst minified jQuery -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
     <!-- custom stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/style-template.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/signup.css">
 
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">match<strong>Box</strong></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="container">
+            <a class="navbar-brand" href="#">match
+                <strong>Box</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-        <br>
+        </div>
+    </nav>
+    <br>
 
-<!-- container that holds our form that collects user info upon creating an account -->
+    <!-- container that holds our form that collects user info upon creating an account -->
     <div class="container">
         <div class="row ">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
                 <h2 class="text-center">Let's Get You Set Up!</h2>
-                    <br>
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputFirstName">First Name</label>
-                                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputLastName">Last Name</label>
-                                <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
-                            </div>
+                <br>
+                <form method="POST" action="survey.html">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputFirstName">First Name</label>
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" required>
                         </div>
-                        <hr>
+                        <div class="form-group col-md-6">
+                            <label for="inputLastName">Last Name</label>
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                        <label for="inputEmail">Email address</label>
+                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPass">Password</label>
+                        <input type="password" class="form-control" id="inputPass" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPass">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPass" placeholder="Confirm Password" required>
+                    </div>
+                    <hr>
+                    <div id="shipping">
                         <div class="form-group">
-                            <label for="inputEmail">Email address</label>
-                            <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                        </div>
-                         <div class="form-group">
-                            <label for="inputPass">Password</label>
-                            <input type="password" class="form-control" id="inputPass" placeholder="Password">
-                        </div>
-                        <hr>
-                        <div class="form-group">
-                            <label for="inputAddress">Address</label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            <label for="inputAddress">Shipping Address</label>
+                            <br>
+                            <input type="checkbox" name="checkbox" id="checkbox" onclick="submitForm()">Billing address is the same as shipping.
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
                         </div>
                         <div class="form-group">
                             <label for="inputAddress2">Address 2</label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" required>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputCity">City</label>
-                                <input type="text" class="form-control" id="inputCity" placeholder="San Diego">
+                                <input type="text" class="form-control" id="inputCity" placeholder="San Diego" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="inputState">State</label>
-                                <input id="inputState" class="form-control" placeholder="California">
+                                <input id="inputState" class="form-control" placeholder="California" required>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="inputZip">Zip</label>
-                                <input type="text" class="form-control" id="inputZip" placeholder="12345">
+                                <input type="text" class="form-control" id="inputZip" placeholder="12345" required>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div id="billing">
+                        <div class="form-group">
+                            <label for="inputAddress">Billing Address</label>
+                            <input type="text" class="form-control" id="bAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress2">Address 2</label>
+                            <input type="text" class="form-control" id="bAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">City</label>
+                                <input type="text" class="form-control" id="bCity" placeholder="San Diego">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="inputState">State</label>
+                                <input id="bState" class="form-control" placeholder="California">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="inputZip">Zip</label>
+                                <input type="text" class="form-control" id="bZip" placeholder="12345">
                             </div>
                         </div>
                         <hr>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
-                                    I agree to the terms and conditions
-                                </label>
-                            </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                            <label class="form-check-label" for="gridCheck">
+                                I agree to the terms and conditions
+                            </label>
                         </div>
-                        <button type="submit" class="btn purchase-btn">Submit</button>
-                    </form>
+                    </div>
+                    <button type="submit" class="btn purchase-btn submit">Submit</button>
+                </form>
                 <div class="col-lg-2"></div>
             </div>
         </div>
@@ -106,8 +146,19 @@
 
 
 
-<script src=""></script>
-<script>
-</script>
+    <script src="assets/js/ship.js"></script>
+    <script>
+
+        function submitForm() {
+            if ($('input[name="checkbox"]').is(":checked")) {
+                $("#billing").hide();
+            } else {
+                $("#billing").show();
+            }
+
+        };
+
+    </script>
 </body>
+
 </html>
