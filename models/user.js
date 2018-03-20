@@ -39,6 +39,14 @@ module.exports = function(sequelize, DataTypes) {
 
     city: {
       type: DataTypes.STRING
+    },
+
+    state: {
+      type: DataTypes.STRING
+    },
+
+    current_box: {
+      type: DataTypes.INTEGER
     }
   })
 
