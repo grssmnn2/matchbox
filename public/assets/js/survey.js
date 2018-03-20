@@ -12,7 +12,7 @@
     $("#submit-survey").on("click", e => {
         e.preventDefault();
         // ===== for testing until login works =====
-        localStorage.setItem("matchBox_user_id", 4);
+        localStorage.setItem("matchBox_user_id", 5);
         // ===== remove between these lines =====
         let userId = JSON.parse(localStorage.getItem("matchBox_user_id"));
         let scoreArray = [];
@@ -25,8 +25,10 @@
         $.ajax("/api/users/" + userId, {
             type: "PUT",
             data: { bucket_id: ans }
-        }).then(data => location.reload());
-        console.log(`UPDATE bucket_id TO ${ans} WHERE id=${userId}`);
+        }).then(data => {
+            console.log(`UPDATE bucket_id TO ${ans} WHERE id=${userId}`);
+            window.location.replace("./user_dashboard/:id/:bucket");
+        });
     })
 
 })();
