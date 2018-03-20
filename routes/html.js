@@ -47,12 +47,6 @@
       res.sendFile(path.join(__dirname, "../public/test-userProfiles.html"));
     });
 
-    // update profile
-    app.put("/api/user_boxes/:id", (req, res) => {
-      db.UserBoxes.update({ BoxId: req.body.box_id }, { where: { id: req.params.id }
-      }).then(dbUserBoxes => res.json(dbUserBoxes));
-    });
-
     // signout page
     app.get("/signout", (req, res) => {
       res.sendFile(path.join(__dirname, "../public/signout.html"));
