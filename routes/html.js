@@ -25,11 +25,6 @@
       res.sendFile(path.join(__dirname, "../public/signup.html"));
     });
 
-    // billing page
-    app.get("/shipping", (req, res) => {
-      res.sendFile(path.join(__dirname, "../public/shipping.html"));
-    });
-
     // user dashboard (handlebars)
     app.get("/user_dashboard/:id/:bucket", (req, res) => {
       Promise.all([
