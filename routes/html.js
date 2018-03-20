@@ -28,12 +28,12 @@
     // user dashboard (handlebars)
     app.get("/user_dashboard/:id/:bucket", (req, res) => {
       Promise.all([
+        db.Box.findAll({}),
         db.Box.findAll({ where: { bucket_id: req.params.bucket } }), 
         db.User.findOne({ where: { id: req.params.id }}), 
-        db.UserBox.findOne({ where: { UserId: req.params.id }})
-      ]).then(([boxResults, userProfile, linkedBox]) => {
-        let currentBox = boxResults[linkedBox.BoxId];
-        res.render("index", { boxResults, userProfile, currentBox });
+      ]).then(([ allBoxes, boxResults, userProfile]) => {
+        let currentBox = allBoxes[userProfile.current_box - 1];
+        res.render("index", { currentBox, boxResults, userProfile });
       })
     });
 
