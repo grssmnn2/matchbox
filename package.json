@@ -23,6 +23,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
     "fs": "0.0.1-security",
     "handlebars-intl": "^1.1.2",
     "moment": "^2.21.0",

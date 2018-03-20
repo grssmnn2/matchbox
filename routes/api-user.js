@@ -1,5 +1,6 @@
 // require access to User table in models folder
 var db = require("../models");
+var passport = require("../config/passport");
 
 module.exports = function (app) {
     //retrieve stored users
@@ -10,6 +11,11 @@ module.exports = function (app) {
             });
     });
 
+    //  this will send the user to their page 
+
+    app.post("/api/login", passport.authenticate("local"), function(req, res){
+        res.json("/members");
+    })
     // POST route for saving a new user
     app.post("/api/users", function (req, res) {
         console.log(req.body);
