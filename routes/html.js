@@ -10,6 +10,11 @@
       res.sendFile(path.join(__dirname, "../public/index.html"));
     });
 
+    // get request to signup page 
+    app.get("/signup", (req, res) => {
+      res.sendFile(path.join(__dirname, "../public/signup.html"))
+    });
+
     // login page
     app.get("/login", (req, res) => {
       res.sendFile(path.join(__dirname, "../public/login.html"));
