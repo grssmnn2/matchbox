@@ -48,7 +48,7 @@
     });
 
     // update profile
-    app.put("/api/users/:id", (req, res) => {
+    app.put("/api/user_boxes/:id", (req, res) => {
       db.UserBoxes.update({ BoxId: req.body.box_id }, { where: { id: req.params.id }
       }).then(dbUserBoxes => res.json(dbUserBoxes));
     });
