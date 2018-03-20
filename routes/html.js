@@ -3,7 +3,7 @@
   const path = require("path");
   const db = require("../models");
 
-  // const isAuthenticated = require("../config/middleware/isAuthenticated");
+  const isAuthenticated = require("../config/middleware/isAuthenticated");
   
 
   module.exports = app => {
@@ -48,13 +48,16 @@
     app.get("/dashboard", (req, res) => {
       res.sendFile(path.join(__dirname, "../public/test-userProfiles.html"));
     });
+
+
 //  this is for testing only - 
 //  user who is not logged in will get redirected to our home page 
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   //  this pertains to HBS
-  // app.get("/members", isAuthenticated, function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/members.html"));
-  // });
+  //  this already exists above 
+  app.get("/members", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/members.html"));
+  });
 
 
   };

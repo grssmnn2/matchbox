@@ -32,6 +32,7 @@ $(document).ready(function() {
         password: password
       }).then(function(data) {
         window.location.replace(data);
+        // window.location.replace(`./user_dashboard/${id}/${bucket}`);
         // If there's an error, log the error
       }).catch(function(err) {
         console.log(err);
