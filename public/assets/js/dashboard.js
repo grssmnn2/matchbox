@@ -16,6 +16,7 @@
     
     $("#switch").on("click", e => {
         e.preventDefault();
+        console.log("hello");
         let id = $("#user_id").attr("data-key");
         let box = $("#box_id").attr("data-key");
         if (id === undefined || null) {
