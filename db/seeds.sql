@@ -93,9 +93,9 @@ CREATE TABLE IF NOT EXISTS `Boxes` (
 ALTER TABLE `Boxes`
 ADD `image_url` TEXT NOT NULL;
 
-INSERT INTO `Users` (email, password, bucket_id, firstName, lastName, age, city) VALUES 
-("", "", 1, "Priya", "Shah", 0, "Chicago, IL"),
-("", "", 2, "Noreen", "Madden", 0, "Chicago, IL"),
-("", "", 3, "Shawn", "Feiz", 0, "Chicago, IL"),
-("", "", 4, "Cecily", "Grossmann", 0, "Chicago, IL"),
-("", "", 5, "Rachel", "Brown", 0, "Chicago, IL");
+INSERT INTO `Users` (email, bucket_id, firstName, lastName) VALUES 
+("priya@coding-royalty.com", 1, "Priya", "Shah"),
+("noreen@coding-royalty.com", 2, "Noreen", "Madden"),
+("shawn@coding-royalty.com", 3, "Shawn", "Feiz"),
+("cecily@coding-royalty.com", 4, "Cecily", "Grossmann"),
+("rachel@coding-royalty.com", 5, "Rachel", "Brown");
