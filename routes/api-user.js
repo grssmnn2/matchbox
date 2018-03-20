@@ -11,11 +11,12 @@ module.exports = function (app) {
             });
     });
 
-    //  this will send the user to their page 
+    //  this will send the user to their page - commenting this out since it threw an error, might be duped. 
 
-    app.post("/api/login", passport.authenticate("local"), function(req, res){
-        res.json("/members");
-    })
+    // app.post("/api/login", passport.authenticate("local"), function(req, res){
+    //     res.json("/members");
+    // })
+    
     // POST route for saving a new user
     app.post("/api/users", function (req, res) {
         console.log(req.body);
@@ -34,6 +35,7 @@ module.exports = function (app) {
             });
     });
 
+    //  route for logging user out 
     // PUT route for updating users
     app.put("/api/users/:id", (req, res) => {
         db.User.update(req.body, { where: { id: req.params.id }
