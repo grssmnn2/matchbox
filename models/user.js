@@ -11,9 +11,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: {
-        isEmail: true
-      }
+      // validate: {
+      //   isEmail: true
+      // }
     },
     password: {
       type: DataTypes.STRING
@@ -25,12 +25,12 @@ module.exports = function(sequelize, DataTypes) {
 
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false
+      // allowNull: false
     },
 
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false
+      // allowNull: false
     },
 
     age: {
@@ -70,14 +70,14 @@ module.exports = function(sequelize, DataTypes) {
     })
   }
   // //  ok so for each user -compare unhashed to hashed password
-  // User.prototype.validPassword = function(password) {
-  //   return bcrypt.compareSync(password, this.password)
-  // }
+  User.prototype.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password)
+  }
 
-  // //  Hook method here  so that way it auto hashes their password
-  // User.hook("beforeCreate", function(user) {
-  //   user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null)
-  // })
+  //  Hook method here  so that way it auto hashes their password
+  User.hook("beforeCreate", function(user) {
+    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null)
+  })
   console.log("THIS IS THE USER !!!! right before the return ------", User)
   return User
 }
