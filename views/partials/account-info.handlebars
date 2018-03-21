@@ -23,7 +23,7 @@
             <h5><strong>Name: </strong>{{userProfile.firstName}} {{userProfile.lastName}}</h5>
             <h5><strong>Email: </strong>{{userProfile.email}}</h5>
             <h5><strong>Location: </strong>{{userProfile.ship_city}}, {{userProfile.ship_state}}</h5>
-            <h5><strong>Member Since: </strong>{{moment userProfile.createdAt format="YYYY-MM-DD"}}</h5>
+            <h5><strong>Member Since: </strong>{{moment userProfile.createdAt format="MMMM Do YYYY"}}</h5>
 
         </div>
         <a id="update-profile" class="btn purchase-btn btn-lg float-right" href="#">Update Profile</a>
