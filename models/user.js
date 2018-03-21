@@ -79,6 +79,10 @@ module.exports = function(sequelize, DataTypes) {
     bill_zip: {
         type: DataTypes.STRING
       },
+    createdAt:{
+      type: DataTypes.DATEONLY,
+      timestamps: false
+    }
     });
     
  //===================================================================
