@@ -26,12 +26,12 @@
 // user cannot proceed if survey is missing answers
 $(document).ready(function () {
     $('#submit-survey').prop('disabled', true);
-    inspectAllInputFields();
-});
+        inspectAllInputFields();
+    });
 
-$('input[type=radio]').change(function () {
-    inspectAllInputFields();
-});
+    $('input[type=radio]').change(function () {
+        inspectAllInputFields();
+    });
 
 function inspectAllInputFields() {
     var count = 0;

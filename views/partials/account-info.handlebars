@@ -1,17 +1,28 @@
 <div class="row my-4">
-    <div class="col-lg-7 center">
+    <div class="col-lg-7 text-center">
+        {{#if userProfile.current_box}}
         <img class="img-fluid rounded" src="{{currentBox.image_url}}" alt="">
+        {{else}}
+        <div class="subscribe">
+            <h1 class="divide card-title">Not Currently Subscribed</h1>
+            <h1 class="timer">Browse the curated results below to find a subscription box that's perfectly tailored to your interests.</h1>
+        </div>
+        {{/if}}
     </div>
     <div class="col-lg-5 account-snapshot">
         <h1 class="text-center">It's Lit, {{userProfile.firstName}}</h1>
-        <h5 class="dash-blurb accent text-center">You are currenty subscribed for:<br>{{currentBox.name}}</h5>
+        {{#if userProfile.current_box}}
+            <h5 class="dash-blurb accent text-center">You are currenty subscribed for:<br>{{currentBox.name}}</h5>
+        {{else}}
+            <h5 class="dash-blurb accent text-center">You are Not Currenty Subscribed</h5>
+        {{/if}}
         <div class="dash-blurb">
             <h5 class="accent2">Profile Snapshot</h5>
             <div id="user_id" data-key="{{userProfile.id}}"></div>
             <div id="bucket_id" data-key="{{userProfile.bucket_id}}"></div>
             <h5><strong>Name: </strong>{{userProfile.firstName}} {{userProfile.lastName}}</h5>
             <h5><strong>Email: </strong>{{userProfile.email}}</h5>
-            <h5><strong>Location: </strong>{{userProfile.city}}, {{userProfile.state}}</h5>
+            <h5><strong>Location: </strong>{{userProfile.ship_city}}, {{userProfile.ship_state}}</h5>
             <h5><strong>Member Since: </strong>{{userProfile.createdAt}}</h5>
         </div>
         <a id="update-profile" class="btn purchase-btn btn-lg float-right" href="#">Update Profile</a>

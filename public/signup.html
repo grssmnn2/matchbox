@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up!</title>
+    <title>matchBox | Sign Up</title>
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
     <link rel="shortcut icon" href="assets/img/boxicon.png" type="image/x-icon">
     <!-- Latest compiled and minified Bootstrap -->
@@ -17,7 +17,6 @@
     <!-- custom stylesheet -->
     <link rel="stylesheet" type="text/css" href="assets/css/style-template.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/signup.css">
 
 </head>
 
@@ -25,9 +24,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">match
-                <strong>Box</strong>
-            </a>
+            <a class="navbar-brand" href="index.html">match<strong>Box</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,7 +45,7 @@
         <div class="row ">
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <h2 class="text-center">Let's Get You Set Up!</h2>
+                <h2>Almost There...</h2>
                 <br>
                 <form>
                     <div class="form-row">
@@ -61,7 +58,7 @@
                             <input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
                         </div>
                     </div>
-                    <hr>
+                    <hr class="orange-line">
                     <div class="form-group">
                         <label for="inputEmail">Email address</label>
                         <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
@@ -75,12 +72,12 @@
                         <label for="confirmPass">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPass" placeholder="Confirm Password" required>
                     </div>
-                    <hr>
+                    <hr class="orange-line">
                     <div id="shipping">
                         <div class="form-group">
                             <label for="inputAddress">Shipping Address</label>
                             <br>
-                            <input type="checkbox" name="checkbox" id="checkbox" onclick="submitForm()">Billing address is the same as shipping.
+                            <input type="checkbox" name="checkbox" class="check" id="billingCheckbox">Billing address is the same as shipping.
                             <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
                         </div>
                         <div class="form-group">
@@ -102,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
+                    <hr class="orange-line">
                     <div id="billing">
                         <div class="form-group">
                             <label for="inputAddress">Billing Address</label>
@@ -126,23 +123,31 @@
                                 <input type="text" class="form-control bill" id="bZip" placeholder="12345"required>
                             </div>
                         </div>
-                        <hr>
+                        <hr class="orange-line">
                     </div>
 
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                            <input class="form-check-input" type="checkbox" class="check" id="gridCheck" required>
                             <label class="form-check-label" for="gridCheck">
                                 I agree to the terms and conditions
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn purchase-btn submit">Submit</button>
+                    <button type="submit" class="btn purchase-btn submit float-right">Submit</button>
+                    <div class="clearfix"></div>
                 </form>
                 <div class="col-lg-2"></div>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <a href="https://github.com/rbrown511/matchbox"><img class="social-icon" src="assets/img/github.png" /></a>
+        </div>
+    </footer>
 
     <script src="assets/js/userSignup.js"></script>
 
