@@ -18,13 +18,15 @@ _For example, if you love makeup boxes you can opt into different brands of make
 >"My baby loves matchBox, my wife loves matchBox, I love matchBox!" -Mark Thompson
 
 
-
-
-
-
-
-
 ![matchBox Landing Page](./public/assets/img/matchBoxLandingPage.png)
+
+## Authors
+
+* **Rachel Brown** - *Github* - (https://github.com/rbrown511)
+* **Shawn Feiz** - *Github* - (https://github.com/ShawnFeiz)
+* **Cecily Grossmann** - *Github* - (https://github.com/grssmnn2)
+* **Noreen Madden** - *Github* - (https://github.com/Norby257)
+* **Priya Shah** - *Github* - (https://github.com/PriyaDoIT)
 
 ### The Process
 
@@ -50,3 +52,5 @@ _For example, if you love makeup boxes you can opt into different brands of make
 
 ![Learn More Screen](./public/assets/img/readme/learn.PNG)
 **Learn More:** Learn more information about any box before subscribing by hitting "Learn More" under your favorite selection.
+
+
