@@ -18,12 +18,12 @@ module.exports = function(sequelize, DataTypes) {
     },
 
     price: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.DECIMAL,
       allowNull: false
     },
 
     image_url: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false
     },
 
