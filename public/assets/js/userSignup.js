@@ -1,12 +1,21 @@
-console.log("we are linked")
 $(document).ready(function() {
-  // Getting references to our form and input
+ 
+  // confirm user password
+  var inputPass = document.getElementById("inputPass")
+      , confirmPass = document.getElementById("confirmPass");
 
-  // var emailInput = $("input#inputEmail");
-  // var passwordInput = $("input#inputPass");
-  // var firstNameInput = $("#inputFirstName");
-  // var lastNameInput = $("#inputLastName");
-  // When the signup button is clicked, we validate the email and password are not blank
+  function validatePassword() {
+      if (inputPass.value != confirmPass.value) {
+          event.preventDefault();
+          confirmPass.setCustomValidity("Passwords Don't Match");
+
+      } else {
+          confirmPass.setCustomValidity('');
+      }
+  }
+
+  inputPass.onchange = validatePassword;
+  confirmPass.onkeyup = validatePassword;
 
   $("form").on("submit", function(event) {
     event.preventDefault()
