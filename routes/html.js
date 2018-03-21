@@ -34,14 +34,18 @@
     });
 
     // user dashboard (handlebars)
-    app.get("/user_dashboard/:id/:bucket", (req, res) => {
+    app.get("/user_dashboard/:id/:bucket?", (req, res) => {
       Promise.all([
         db.Box.findAll({}),
         db.Box.findAll({ where: { bucket_id: req.params.bucket } }), 
         db.User.findOne({ where: { id: req.params.id }}), 
       ]).then(([ allBoxes, boxResults, userProfile]) => {
-        let currentBox = allBoxes[userProfile.current_box - 1];
-        res.render("index", { currentBox, boxResults, userProfile });
+        if (boxResults.name === undefined || null) {
+          res.render("index", { allBoxes, boxResults, userProfile });
+        } else {
+          let currentBox = allBoxes[userProfile.current_box - 1];
+          res.render("index", { currentBox, boxResults, userProfile });
+        }
       })
     });
 
