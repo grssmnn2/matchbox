@@ -6,6 +6,7 @@
   const session = require("express-session");
   const db = require("./models");
   const passport = require("./config/passport");
+  const helpers = require('handlebars-helpers')();
   
   const PORT = process.env.PORT || 3000;
 
