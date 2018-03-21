@@ -8,13 +8,31 @@
         <div class="card-body" id="highlight-row"></div>
     </div>
 
-    <!-- Subscription Box Options -->
-    <div class="row">
-    {{#boxResults}}
-        {{> results/triggers }}
-    {{/boxResults}}
-    </div>
-    {{#boxResults}}
-        {{> results/modals }}
-    {{/boxResults}}
+    {{#if boxResults}}
+        <!-- CURATED Subscription Box Options -->
+        <div class="row">
+        {{#boxResults}}
+            {{> results/triggers }}
+        {{/boxResults}}
+        </div>
+        {{#boxResults}}
+            {{> results/modals }}
+        {{/boxResults}}
+        <div class="card h-100">
+            <div class="card-footer">
+                <a href="./user_dashboard/{{id}}" class="btn btn-more accent2">Not the Right Fit? See More Options</a>
+            </div>
+        </div>
+    {{else}}
+        <!-- ALL Subscription Box Options -->
+        <div class="row">
+        {{#allBoxes}}
+            {{> results/triggers }}
+        {{/allBoxes}}
+        </div>
+        {{#allBoxes}}
+            {{> results/modals }}
+        {{/allBoxes}}
+    {{/if}}
+
 </div>
