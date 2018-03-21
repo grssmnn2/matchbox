@@ -25,3 +25,23 @@ _For example, if you love makeup boxes you can opt into different brands of make
 
 
 ![matchBox Landing Page](./public/assets/img/matchBoxLandingPage.png)
+
+### The Process
+
+![survey Page](./public/assets/img/readme/survey.PNG)
+**The Survey:** Answer a few short questions to calculate your best match subscription box category.
+
+![sign up Page](./public/assets/img/readme/signup.PNG)
+**Sign Up:** Sign up with your contact information to receive your box in the mail.
+
+![Choose a Box Page](./public/assets/img/readme/choosebox.PNG)
+**User Profile:** Receive a user profile page where you'll find a sign up date and options to select boxes.
+
+![User Dashboard with box selected](./public/assets/img/readme/dashboard.PNG)
+**Current Subscription:** Currently subscribed box will appear in your contact details for easy access.
+
+![Box Choices Available in Category](./public/assets/img/readme/boxes.PNG)
+**Alternate Options:** Not happy with your current selection? Browse other boxes in your selected category with easy access to switch subscriptions.
+
+![Learn More Screen](./public/assets/img/readme/learn.PNG)
+**Learn More:** Learn more information about any box before subscribing by hitting "Learn More" under your favorite selection.
