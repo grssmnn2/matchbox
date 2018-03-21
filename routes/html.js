@@ -8,7 +8,7 @@
 
   module.exports = app => {
 
-    // homepage - login or signup
+    // homepage - options to login or signup
     app.get("/", (req, res) => {
       res.sendFile(path.join(__dirname, "../public/index.html"));
     });
@@ -28,19 +28,20 @@
       res.sendFile(path.join(__dirname, "../public/survey.html"));
     });
 
-     // shipping page
-     app.get("/shipping", (req, res) => {
-      res.sendFile(path.join(__dirname, "../public/shipping.html"));
+    // signup page
+    app.get("/signup", (req, res) => {
+      res.sendFile(path.join(__dirname, "../public/signup.html"));
     });
 
     // user dashboard (handlebars)
-    app.get("/user_dashboard/:id/:bucket?", (req, res) => {
+    app.get("/user_dashboard/:id/:bucket", (req, res) => {
       Promise.all([
+        db.Box.findAll({}),
         db.Box.findAll({ where: { bucket_id: req.params.bucket } }), 
         db.User.findOne({ where: { id: req.params.id }}), 
-        db.UserBox.findAll({ where: { UserId: req.params.id }})
-      ]).then(([boxResults, userProfile, pastOrders]) => {
-        res.render("index", { boxResults, userProfile, pastOrders });
+      ]).then(([ allBoxes, boxResults, userProfile]) => {
+        let currentBox = allBoxes[userProfile.current_box - 1];
+        res.render("index", { currentBox, boxResults, userProfile });
       })
     });
 
@@ -56,8 +57,19 @@
   //  this pertains to HBS
   //  this already exists above 
   app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
+
+
+    // signout page
+    app.get("/signout", (req, res) => {
+      res.sendFile(path.join(__dirname, "../public/signout.html"));
+    });
+
+    // error page
+    app.get("/error", (req, res) => {
+      res.sendFile(path.join(__dirname, "../public/error.html"));
+    });
 
 
   };

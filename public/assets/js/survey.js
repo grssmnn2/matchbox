@@ -1,10 +1,10 @@
 (() => {
 
     // calculates the answer with highest frequency
-    function mode(arr){
-        return arr.sort((a,b) =>
-              arr.filter(v => v===a).length
-            - arr.filter(v => v===b).length
+    function mode(arr) {
+        return arr.sort((a, b) =>
+            arr.filter(v => v === a).length
+            - arr.filter(v => v === b).length
         ).pop();
     }
 
@@ -12,7 +12,7 @@
     $("#submit-survey").on("click", e => {
         e.preventDefault();
         // ===== for testing until login works =====
-        localStorage.setItem("matchBox_user_id", 4);
+        localStorage.setItem("matchBox_user_id", 5);
         // ===== remove between these lines =====
         let userId = JSON.parse(localStorage.getItem("matchBox_user_id"));
         let scoreArray = [];
@@ -20,13 +20,42 @@
             let score = $(`input[name=group${i}]:checked`).val();
             if (score === undefined) { score = Math.floor(Math.random() * 5) + 1 }
             scoreArray.push(+score);
-        }        
+        }
         let ans = mode(scoreArray);
         $.ajax("/api/users/" + userId, {
             type: "PUT",
             data: { bucket_id: ans }
-        }).then(data => location.reload());
-        console.log(`UPDATE bucket_id TO ${ans} WHERE id=${userId}`);
+        }).then(data => {
+            console.log(`UPDATE bucket_id TO ${ans} WHERE id=${userId}`);
+            window.location.replace("./user_dashboard/:id/:bucket");
+        });
     })
 
 })();
+
+// proceed to account creation after enabling submit button
+$("#submit-survey").click(function () {
+    window.location.assign("signup.html");
+});
+
+// user cannot proceed if survey is missing answers
+$(document).ready(function () {
+    $('#submit-survey').prop('disabled', true);
+    inspectAllInputFields();
+});
+
+$('input[type=radio]').change(function () {
+    inspectAllInputFields();
+});
+
+function inspectAllInputFields() {
+    var count = 0;
+    $('#submit-survey').prop('disabled', false);
+
+    $('.survey-options').each(function (i) {
+        count = $(this).find('input[type=radio]:checked').length;
+        if (count == 0) {
+            $('#submit-survey').prop('disabled', true);
+        }
+    });
+}
