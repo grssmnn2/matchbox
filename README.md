@@ -8,3 +8,20 @@
 
 **The best part?** You can choose a new subscription box brand each month! Or continue with one you like for any length of time. 
 _For example, if you love makeup boxes you can opt into different brands of makeup boxes every month, stick with one of your favorites, or switch it up entirely._
+
+
+
+
+
+
+
+>"My baby loves matchBox, my wife loves matchBox, I love matchBox!" -Mark Thompson
+
+
+
+
+
+
+
+
+![matchBox Landing Page](./public/assets/img/matchBoxLandingPage.png)
