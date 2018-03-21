@@ -20,24 +20,8 @@ module.exports = function (app) {
     })
 
     // POST route for saving a new user
-    app.post("/api/users", function (req, res) {
-        console.log("create");
-        db.User.create({
-            firstName: req.body.firstName,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            age: req.body.age,
-            city: req.body.city,
-            password: req.body.password,
-            bucket_id: req.body.bucket_id,
-            image_url: req.body.image_url
-        })
-            .then(function (dbUser) {
-                // res.json(dbUser);
-                console.log(dbUser);
-                
-                
-            });
+    app.post("/api/users", (req, res) => {
+        db.User.create(req.body).then(dbUser => res.json(dbUser));
     });
 
     //  route for logging user out 
