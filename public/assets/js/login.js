@@ -1,43 +1,42 @@
-console.log("We are linked");
-
-$(document).ready(function() {
-    // Getting references to our form and inputs
-    var loginForm = $("form");
-    var emailInput = $("input#inputEmail");
-    var passwordInput = $("input#inputPass");
+// HANDLES LOGINS FOR EXISTING CUSTOMERS
+(() => {
+  $(document).ready(() => {
   
-    // When the form is submitted, we validate there's an email and password entered
-    loginForm.on("submit", function(event) {
+    // =======================================
+    // ======== were values entered? =========
+    // =======================================
+    $("form").on("submit", event => {
       event.preventDefault();
       var userData = {
-        email: emailInput.val().trim(),
-        password: passwordInput.val().trim()
+        email: $("input#inputEmail").val().trim(),
+        password: $("input#inputPass").val().trim()
       };
-      console.log(userData);
-  
+      // making sure input forms were not left blank
       if (!userData.email || !userData.password) {
-        return;
+        alert("Please enter a valid email address and password.")
+      } else {
+        // continue process with database call
+        loginUser(userData.email, userData.password);
+        // reset form
+        $("#login")[0].reset();
       }
-  
-      // If we have an email and password we run the loginUser function and clear the form
-      loginUser(userData.email, userData.password);
-      emailInput.val("");
-      passwordInput.val("");
     });
-  
-    // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
+
+    // =======================================
+    // ===== are the credentials valid? ======
+    // =======================================    
     function loginUser(email, password) {
-      $.post("/api/login", {
-        email: email,
-        password: password
-      }).then(function(data) {
-        window.location.replace(data);
-        // window.location.replace(`./user_dashboard/${id}/${bucket}`);
-        // If there's an error, log the error
-      }).catch(function(err) {
-        console.log(err);
+      $.post("/api/users/login", {
+          email: email,
+          password: password
+      }).then(data => {
+        let id = data.id;
+        let bucket_id = data.bucket_id;
+        window.location.assign(`/user_dashboard/${id}/${bucket_id}`);
+      }).catch(err => {
+        $("#login-failed").html(`<p>Invalid email or password. Please try again.</p><hr class="orange-line">`);
       });
     }
   
   });
-  
+})();
