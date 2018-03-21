@@ -12,14 +12,16 @@ module.exports = function (app) {
     });
 
     //  this will send the user to their page - commenting this out since it threw an error, might be duped. 
+    //  what goes here: we'll have to do a promise all - 
 
     app.post("/api/login", passport.authenticate("local"), function(req, res){
-        res.json("/members");
+        // console.log(res.body.id);
+        // res.json("/members");
     })
 
     // POST route for saving a new user
     app.post("/api/users", function (req, res) {
-        console.log(req.body);
+        console.log("create");
         db.User.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -31,7 +33,10 @@ module.exports = function (app) {
             image_url: req.body.image_url
         })
             .then(function (dbUser) {
-                res.json(dbUser);
+                // res.json(dbUser);
+                console.log(dbUser);
+                
+                
             });
     });
 
