@@ -7,14 +7,27 @@ var bcrypt = require("bcrypt-nodejs")
 module.exports = function(sequelize, DataTypes) {
   console.log("we hit user!!!!!!!!!!!")
   var User = sequelize.define("User", {
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      // validate: {
-      //   isEmail: true
-      // }
+
+    firstName: {
+    type: DataTypes.STRING,
+    allowNull: false
     },
+
+    lastName: {
+    type: DataTypes.STRING,
+    allowNull: false
+    },
+    
+    email: {
+
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true,
+    // validate: {
+    //     isEmail: true
+    //     }
+    },
+
     password: {
       type: DataTypes.STRING
     },
@@ -23,32 +36,52 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER
     },
 
-    firstName: {
-      type: DataTypes.STRING,
-      // allowNull: false
-    },
-
-    lastName: {
-      type: DataTypes.STRING,
-      // allowNull: false
-    },
-
-    age: {
-      type: DataTypes.INTEGER
-    },
-
-    city: {
-      type: DataTypes.STRING
-    },
-
-    state: {
-      type: DataTypes.STRING
-    },
-
     current_box: {
-      type: DataTypes.INTEGER
-    }
-  })
+        type: DataTypes.INTEGER
+    },
+
+    ship_add1: {
+        type: DataTypes.STRING
+      },
+
+    ship_add2: {
+        type: DataTypes.STRING
+      },
+
+    ship_city: {
+        type: DataTypes.STRING
+      },
+    
+    ship_state: {
+       type: DataTypes.STRING
+     },
+
+    ship_zip: {
+        type: DataTypes.STRING
+      },
+
+    bill_add1: {
+        type: DataTypes.STRING
+      },
+
+    bill_add2: {
+        type: DataTypes.STRING
+      },
+
+    bill_city: {
+        type: DataTypes.STRING
+      },
+
+    bill_state: {
+        type: DataTypes.STRING
+      },
+    
+    bill_zip: {
+        type: DataTypes.STRING
+      },
+    });
+    
+ //===================================================================
 
   User.associate = function(models) {
     User.hasMany(models.Box, {
