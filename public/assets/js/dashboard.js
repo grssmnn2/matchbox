@@ -41,7 +41,6 @@
         event.preventDefault();
         let id = $(this).attr("data-userId");
         let bucket = $(this).attr("data-bucketId");
-        console.log(id);
         let updatedInfo = {
             firstName: $("#inputFirstName").val().trim(),
             lastName: $("#inputLastName").val().trim(),
