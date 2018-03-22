@@ -54,7 +54,8 @@
       db.User.findOne({ 
         where: { 
           id: req.params.id 
-      }}).then((userUpdate) => res.render("update", userUpdate))});
+      }}).then(data => res.render("update", { User: data })
+    )});
 
     //  this is for testing only - 
     //  user who is not logged in will get redirected to our home page 
