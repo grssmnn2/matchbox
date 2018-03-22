@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div id="modal-{{id}}" class="modal fade" role="dialog">
+<div id="modal-{{id}}-{{bucket_id}}" class="modal fade" role="dialog">
 <div class="modal-dialog">
 
     <!-- Modal content-->
@@ -14,7 +14,7 @@
             <h5>Valued At: ${{price}}/month</h5>
         </div>
         <div class="modal-footer">
-            <button data-key="{{userProfile.id}}" type="button" class="btn btn-default accent switch" data-dismiss="modal-{{id}}">Switch My Subscription!</button>
+            <button href="#" data-key="{{userProfile.id}}" type="button" class="btn btn-default accent switch" data-dismiss="#modal-{{id}}-{{bucket_id}}">Switch My Subscription!</button>
         </div>
     </div>
 

@@ -1,15 +1,14 @@
 // USER DASHBOARD WITH BOX RESULTS
 (()=> {
 
-    $("#update-profile").on("click", e => {
+    $(".update").on("click", function(e) {
         e.preventDefault();
-        let id = $("#user_id").attr("data-key");
-        let bucket = $("#bucket_id").attr("data-key");
+        let id = $(this).attr("id");
+        console.log(id);
         if (id === undefined || null) {
             window.location.assign("/error");
         } else {
-            return id;
-            // future development: link to update form
+            window.location.assign("/update/" + id);
         }
     });
 
@@ -22,7 +21,10 @@
         } else {
             $.ajax("/api/users/" + id, {
                 type: "PUT",
-                data: { current_box: box[1] }
+                data: { 
+                    current_box: box[1],
+                    bucket_id: box[2]
+                }
             }).then(data => location.reload());
         }
     });

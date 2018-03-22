@@ -26,7 +26,5 @@ module.exports = app => {
         }).then(dbUser => res.json(dbUser));
     });
 
-    // logging user out 
-    // TO DO
 };
 

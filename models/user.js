@@ -1,11 +1,9 @@
 //  this is the model which would correspond to our users table in db
 //  dependencies
-// var box = require("./box")
-// var userBox = require("./user_boxes")
 var bcrypt = require("bcrypt-nodejs")
+
 //  creating user model and exporting
 module.exports = function(sequelize, DataTypes) {
-  console.log("we hit user!!!!!!!!!!!")
   var User = sequelize.define("User", {
 
     firstName: {
@@ -23,9 +21,9 @@ module.exports = function(sequelize, DataTypes) {
     type: DataTypes.STRING,
     allowNull: false,
     unique: true,
-    // validate: {
-    //     isEmail: true
-    //     }
+    validate: {
+        isEmail: true
+        }
     },
 
     password: {
@@ -96,7 +94,6 @@ module.exports = function(sequelize, DataTypes) {
   }
 
   User.associate = function(models) {
-    console.log("THESE ARE OUR MODELS in user-------", models)
     User.belongsToMany(models.Box, {
       through: models.UserBox,
       onDelete: "CASCADE"
@@ -107,10 +104,9 @@ module.exports = function(sequelize, DataTypes) {
     return bcrypt.compareSync(password, this.password)
   }
 
-  //  Hook method here  so that way it auto hashes their password
+  //  Hook method here so that way it auto hashes their password
   User.hook("beforeCreate", function(user) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null)
   })
-  console.log("THIS IS THE USER !!!! right before the return ------", User)
   return User
 }
