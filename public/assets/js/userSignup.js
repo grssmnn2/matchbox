@@ -35,7 +35,7 @@
   // ===================================================
   // =========== add new user to database ==============
   // ===================================================
-  $("form").on("submit", event => {
+  $("form#createUser").on("submit", event => {
     event.preventDefault();
 
     var user = {
