@@ -40,29 +40,30 @@
         db.Box.findAll({ where: { bucket_id: req.params.bucket } }), 
         db.User.findOne({ where: { id: req.params.id }}), 
       ]).then(([ allBoxes, boxResults, userProfile]) => {
+        let currentBox = allBoxes[userProfile.current_box - 1];
         if (boxResults.name === undefined || null) {
-          res.render("index", { allBoxes, boxResults, userProfile });
+          res.render("index", { allBoxes, currentBox, boxResults, userProfile });
         } else {
-          let currentBox = allBoxes[userProfile.current_box - 1];
           res.render("index", { currentBox, boxResults, userProfile });
         }
       })
     });
 
-    // TEMPLATE DASHBOARD - TESTING ONLY
-    app.get("/dashboard", (req, res) => {
-      res.sendFile(path.join(__dirname, "../public/test-userProfiles.html"));
+    // update user profile (handlebars)
+    app.get("/update/:id", (req, res) => {
+      db.User.findOne({ 
+        where: { 
+          id: req.params.id 
+      }}).then((userUpdate) => res.render("update", userUpdate))});
+
+    //  this is for testing only - 
+    //  user who is not logged in will get redirected to our home page 
+    //  If a user who is not logged in tries to access this route they will be redirected to the signup page
+    //  this pertains to HBS
+    //  this already exists above 
+    app.get("/members", isAuthenticated, function(req, res) {
+      res.sendFile(path.join(__dirname, "../public/index.html"));
     });
-
-
-//  this is for testing only - 
-//  user who is not logged in will get redirected to our home page 
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  //  this pertains to HBS
-  //  this already exists above 
-  app.get("/members", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
 
 
     // signout page

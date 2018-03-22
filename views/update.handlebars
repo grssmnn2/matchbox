@@ -1,0 +1,75 @@
+<!-- container that holds our form that collects user info upon creating an account -->
+<div class="container single-page">
+    <div class="row ">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <h2 class="text-center divide">Please Update Your Information Below</h2>
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputFirstName">First Name</label>
+                        <input value="" type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputLastName">Last Name</label>
+                        <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                    </div>
+                </div>
+                <hr>
+                <div id="shipping">
+                    <div class="form-group">
+                        <label for="inputAddress">Shipping Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Address 2</label>
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" id="inputCity" placeholder="San Diego">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <input id="inputState" class="form-control" placeholder="California">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip" placeholder="12345">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div id="billing">
+                    <div class="form-group">
+                        <label for="inputAddress">Billing Address</label>
+                        <input type="text" class="form-control bill" id="bAddress" placeholder="1234 Main St">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress2">Address 2</label>
+                        <input type="text" class="form-control bill" id="bAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control bill" id="bCity" placeholder="San Diego"required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">State</label>
+                            <input id="bState" class="form-control bill" placeholder="California"required>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control bill" id="bZip" placeholder="12345"required>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn purchase-btn submit float-right update-profile">Submit</button>
+                <div class="clearfix"></div>
+            </form>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+</div>

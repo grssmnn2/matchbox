@@ -1,11 +1,5 @@
-//  dependencies ?
-
-// var user = require("./user");
-// var userBox = require("./user_boxes");
-
-// console.log(user);
+// SUBSCRIPTION BOX API ROUTES
 module.exports = function(sequelize, DataTypes) {
-  console.log("we hit regular box!!!")
   var Box = sequelize.define("Box", {
     name: {
       type: DataTypes.STRING,
@@ -34,14 +28,11 @@ module.exports = function(sequelize, DataTypes) {
   })
 
   Box.associate = function(models) {
-    console.log("THESE ARE OUR models.User in box -------", models.User)
     Box.belongsToMany(models.User, {
       through: models.UserBox,
       onDelete: "CASCADE"
     })
   }
-
-  console.log("THESE ARE OUR Box  right before return --- -------", Box)
 
   return Box
 }

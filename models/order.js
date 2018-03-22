@@ -20,6 +20,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     })
   }
-  console.log("THIS IS OUR ORDER!!!! right before the return ------", Order);
   return Order
 }

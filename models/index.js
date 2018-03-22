@@ -25,9 +25,7 @@ fs
   });
 
 Object.keys(db).forEach(modelName => {
-  console.log('IN THE INDEX -------', modelName)
   if (db[modelName].associate) {
-    console.log('IN THE INDEX ASSOCIATE ---- -------')
     db[modelName].associate(db);
   }
 });
